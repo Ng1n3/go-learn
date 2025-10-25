@@ -64,4 +64,27 @@ func main() {
 	measure(r)
 	measure(c)
 	measure(r1)
+
+	myPrinter(1, "John", 46.9, true)
+
+	printType(9)
+	printType("John")
+	printType(false)
+}
+
+func printType(i interface{}) {
+	switch i.(type) {
+	case int:
+		fmt.Println("Type: Int")
+	case string:
+		fmt.Println("Type: String")
+	default:
+		fmt.Println("Type: Unknown")
+	}
+}
+
+func myPrinter(i, ...interface{}) {
+	for _, v := range i {
+		fmt.Println(v)
+	}
 }
