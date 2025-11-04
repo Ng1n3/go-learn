@@ -62,4 +62,6 @@ func main() {
 		fmt.Println("Error flusing writer", err)
 		return
 	}
+
+	fmt.Println("There.")
 }
