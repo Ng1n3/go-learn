@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	data := []byte("Hello, Base64 Encoding")
+	data := []byte("He~lo, Base64 Encoding")
 
 	// Encode Base64
 	encoded := base64.StdEncoding.EncodeToString(data)
@@ -21,4 +21,9 @@ func main() {
 	}
 
 	fmt.Println("Decoded string: ", string(bs))
+
+	// URL safe, avoid '/' and '+'
+
+	urlSafeEncoded := base64.URLEncoding.EncodeToString(data)
+	fmt.Println(urlSafeEncoded)
 }
